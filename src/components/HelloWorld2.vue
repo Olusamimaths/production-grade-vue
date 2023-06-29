@@ -1,34 +1,29 @@
 <template>
   <div class="hello">
-    <h1>Count</h1>
-    <h2>Change Amount {{ changeAmount }}</h2>
-    <h2>Count: {{ currentCount }}</h2>
-    <input type="number" v-model.number="changeAmount" />
+    <h1>Count 2</h1>
+    <h1>{{ currentCount }}</h1>
     <button @click="incrementCount">Increment</button>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
 import { useCounter } from "./composables/useCounter";
 
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld2',
   setup() {
-    const { currentCount } = useCounter();
-
-    const changeAmount = ref(1);
+   const { currentCount } = useCounter()
 
     const incrementCount = () => {
-      currentCount.value += changeAmount.value;
-    };  
+      currentCount.value += 2
+    }
+
     return {
-      currentCount,
-      changeAmount,
-      incrementCount
+      incrementCount,
+      currentCount
     };
-  },
-};
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
